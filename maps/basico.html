@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Maps API</title>
+    <style>
+        #mapa{width:800px; height:600px;}
+    </style>
+    <!--<script type="text/javascript" src="main.js"></script>-->
+</head>
+<body>
+    <div id="mapa"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH9jiC8u4stF2NQKiogWKhGua0TytcC_o&callback=fMap"></script>
+    <script>   
+        var meuMapa;
+        function fMap() {
+            var minhaLocalizacao = {lat: -21.1277384, lng: -56.5065485};
+            
+            var meuMapa = new google.maps.Map(document.getElementById('mapa'), {
+                center: minhaLocalizacao,
+                zoom: 10,
+                streetViewControl: false
+            });
+            
+            var marker = new google.maps.Marker({
+                map: meuMapa,
+                position: minhaLocalizacao,
+                icon: 'pin.png'
+            });
+        }
+    </script>    
+</body>
+</html>
